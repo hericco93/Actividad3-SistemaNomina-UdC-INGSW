@@ -1,4 +1,4 @@
-package main.java.com.udec.nomina.modelo;
+package com.udec.nomina.modelo;
 
 public abstract class Empleado {
     private String nombre;

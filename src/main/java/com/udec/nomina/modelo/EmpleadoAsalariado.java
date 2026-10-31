@@ -1,4 +1,4 @@
-package main.java.com.udec.nomina.modelo;
+package com.udec.nomina.modelo;
 
 public class EmpleadoAsalariado extends Empleado {
 
