@@ -28,10 +28,10 @@ public class EmpleadoPorHoras extends Empleado {
         return (horasNormales * tarifaPorHora) + (horasExtras * tarifaPorHora * FACTOR_HORA_EXTRA);
     }
 
-    // El 4% se saca del salario bruto
+    // Las deducciones se sacan del salario bruto
     @Override
     public double calcularDeducciones() {
-        return calcularSalarioBruto() * 0.04;
+        return calcularDeducciones(calcularSalarioBruto());
     }
 
     // 2% del bruto, solo si tiene más de 1 año y aceptó el fondo
