@@ -12,15 +12,15 @@ public class EmpleadoTemporalTest {
 
     @Test
     public void testSalarioNetoEsFijoMenosDeducciones() {
-        // 2.000.000 - 4% (80.000) = 1.920.000
+        // 2.000.000 - 4% (80.000) - ARL (10.440) = 1.909.560
         EmpleadoTemporal e = new EmpleadoTemporal("Luis", "2", 2000000, 0, 6);
-        assertEquals(1920000.0, e.calcularSalarioNeto(), DELTA);
+        assertEquals(1909560.0, e.calcularSalarioNeto(), DELTA);
     }
 
     @Test
     public void testNoRecibeBonosAunqueTengaAntiguedad() {
         EmpleadoTemporal e = new EmpleadoTemporal("Luis", "2", 2000000, 10, 6);
-        assertEquals(1920000.0, e.calcularSalarioNeto(), DELTA);
+        assertEquals(1909560.0, e.calcularSalarioNeto(), DELTA);
     }
 
     @Test

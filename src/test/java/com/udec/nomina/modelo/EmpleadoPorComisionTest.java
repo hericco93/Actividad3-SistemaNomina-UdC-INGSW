@@ -26,4 +26,11 @@ public class EmpleadoPorComisionTest {
             new EmpleadoPorComision("Pedro Perez", "3030", 1500000.0, 1, -500.0, 0.05);
         });
     }
+
+    @Test
+    public void testSalarioNetoConDeduccionesYBonoAlimentacion() {
+        // Bruto 2.000.000 - deducciones 4.522% (90.440) + alimentación 1.000.000
+        EmpleadoPorComision emp = new EmpleadoPorComision("Carlos Gomez", "1010", 1500000.0, 2, 10000000.0, 0.05);
+        assertEquals(2909560.0, emp.calcularSalarioNeto(), 0.01);
+    }
 }
