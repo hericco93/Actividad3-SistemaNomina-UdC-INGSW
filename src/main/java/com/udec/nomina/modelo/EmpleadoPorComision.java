@@ -31,11 +31,17 @@ public class EmpleadoPorComision extends Empleado {
         return getSalarioBase() + comisionBase + bonoExtra;
     }
 
+    // Las deducciones se sacan del salario bruto (base + comisión + bono)
+    @Override
+    public double calcularDeducciones() {
+        return calcularDeducciones(calcularSalarioBruto());
+    }
+
     @Override
     public double calcularSalarioNeto() {
-        double bruto = calcularSalarioBruto();
-        double deducciones = calcularDeducciones();
-        return bruto - deducciones + BONO_ALIMENTACION;
+        double neto = calcularSalarioBruto() - calcularDeducciones() + BONO_ALIMENTACION;
+        ValidadorNomina.validarSalarioNeto(neto);
+        return neto;
     }
 
     public double getVentasRealizadas() {

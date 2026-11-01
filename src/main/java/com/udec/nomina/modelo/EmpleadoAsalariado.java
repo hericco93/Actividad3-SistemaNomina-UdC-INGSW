@@ -2,9 +2,6 @@ package com.udec.nomina.modelo;
 
 public class EmpleadoAsalariado extends Empleado {
 
-    // Tenemos la constante para el bono de alimentación de empleados permanentes
-    private static final double BONO_ALIMENTACION = 1000000.0;
-
     public EmpleadoAsalariado(String nombre, String identificacion, double salarioBase, int aniosAntiguedad) {
         super(nombre, identificacion, salarioBase, aniosAntiguedad);
     }

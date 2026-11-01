@@ -30,18 +30,18 @@ public class EmpleadoPorHorasTest {
     }
 
     @Test
-    public void testSalarioNetoDescuentaSoloSeguroYPension() {
-        // bruto 400000 - 4% (16000) = 384000, sin bonos
+    public void testSalarioNetoDescuentaSeguroPensionYArl() {
+        // bruto 400000 - 4% (16000) - ARL (2088) = 381912, sin bonos
         EmpleadoPorHoras e = new EmpleadoPorHoras("Ana", "1", 0, 10000, 40, false);
-        assertEquals(384000.0, e.calcularSalarioNeto(), DELTA);
+        assertEquals(381912.0, e.calcularSalarioNeto(), DELTA);
     }
 
     @Test
     public void testFondoAhorroConMasDeUnAnioYAceptacion() {
-        // bruto 400000: deducciones 16000, fondo 8000 -> neto 376000
+        // 381912 menos el fondo de 8000 = 373912
         EmpleadoPorHoras e = new EmpleadoPorHoras("Ana", "1", 2, 10000, 40, true);
         assertEquals(8000.0, e.calcularAporteFondoAhorro(), DELTA);
-        assertEquals(376000.0, e.calcularSalarioNeto(), DELTA);
+        assertEquals(373912.0, e.calcularSalarioNeto(), DELTA);
     }
 
     @Test
