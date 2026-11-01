@@ -5,23 +5,20 @@ package com.udec.nomina.modelo;
  */
 public class EmpleadoPorComision extends Empleado {
 
-    private double salarioBase;
     private double ventasRealizadas;
     private double porcentajeComision; // Ejemplo: 0.05 para 5%
 
-    public EmpleadoPorComision(String nombre, String identificacion, double salarioBase, double ventasRealizadas, double porcentajeComision) {
-        super(nombre, identificacion);
+    public EmpleadoPorComision(String nombre, String identificacion, double salarioBase, int aniosAntiguedad, double ventasRealizadas, double porcentajeComision) {
+        super(nombre, identificacion, salarioBase, aniosAntiguedad);
         
         ValidadorNomina.validarMontoNoNegativo(salarioBase, "Salario base");
         ValidadorNomina.validarMontoNoNegativo(ventasRealizadas, "Ventas realizadas");
         ValidadorNomina.validarMontoNoNegativo(porcentajeComision, "Porcentaje de comisión");
 
-        this.salarioBase = salarioBase;
         this.ventasRealizadas = ventasRealizadas;
         this.porcentajeComision = porcentajeComision;
     }
 
-    @Override
     public double calcularSalarioBruto() {
         double comisionBase = ventasRealizadas * porcentajeComision;
         double bonoExtra = 0.0;
@@ -31,11 +28,14 @@ public class EmpleadoPorComision extends Empleado {
             bonoExtra = ventasRealizadas * 0.03;
         }
 
-        return salarioBase + comisionBase + bonoExtra;
+        return getSalarioBase() + comisionBase + bonoExtra;
     }
 
-    public double getSalarioBase() {
-        return salarioBase;
+    @Override
+    public double calcularSalarioNeto() {
+        double bruto = calcularSalarioBruto();
+        double deducciones = calcularDeducciones();
+        return bruto - deducciones + BONO_ALIMENTACION;
     }
 
     public double getVentasRealizadas() {
