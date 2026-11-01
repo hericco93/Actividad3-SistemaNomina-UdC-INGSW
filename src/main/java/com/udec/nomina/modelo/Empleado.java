@@ -6,6 +6,9 @@ public abstract class Empleado {
     private double salarioBase;
     private int aniosAntiguedad;
 
+    // Constante centralizada para el bono de alimentación
+    public static final double BONO_ALIMENTACION = 80000.0;
+
     public Empleado(String nombre, String identificacion, double salarioBase, int aniosAntiguedad) {
         this.nombre = nombre;
         this.identificacion = identificacion;
@@ -13,16 +16,20 @@ public abstract class Empleado {
         this.aniosAntiguedad = aniosAntiguedad;
     }
 
-    // Este es el metodo abstracto el cual obliga a cada tipo de empleado a calcular su propio salario
+    // Método abstracto para que cada tipo de empleado calcule su salario neto
     public abstract double calcularSalarioNeto();
 
-    // Tenemos un metodo comun en el cual encontramos deducciones obligatorias del Seguro Social y Pensión que es del 4%
+    /**
+     * Deducciones obligatorias de ley:
+     * Salud (4%) + Pensión (4%) + ARL (0.522%) = 8.522% (0.08522)
+     */
     public double calcularDeducciones() {
-        return this.salarioBase * 0.04;
+        return this.salarioBase * (0.04 + 0.04 + 0.00522);
     }
 
-    // Acá tenmos los gGetters necesarios para que las clases hijas accedan a los datos
+    // Getters necesarios
     public double getSalarioBase() { return salarioBase; }
     public int getAniosAntiguedad() { return aniosAntiguedad; }
     public String getNombre() { return nombre; }
+    public String getIdentificacion() { return identificacion; }
 }
