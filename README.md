@@ -83,7 +83,7 @@ Trabajamos en equipo de 4 personas con un enfoque ágil ligero:
 
 ## Integrantes
 
-- Estudiante 1: arquitectura (`Empleado`) y `EmpleadoAsalariado`
-- Estudiante 2: `EmpleadoPorHoras`, `EmpleadoTemporal` y fondo de ahorro
-- Estudiante 3: `EmpleadoPorComision`, deducciones y bono de alimentación
-- Estudiante 4: validaciones, pruebas, `Main` y documentación
+- Estudiante 1 (Hector Luis Rodriguez Rico): arquitectura (`Empleado`) y `EmpleadoAsalariado`
+- Estudiante 2 (José Luis Arteta Buelvas): `EmpleadoPorHoras`, `EmpleadoTemporal` y fondo de ahorro
+- Estudiante 3 (Yoiner Cesar Solis Riveira): `EmpleadoPorComision`, deducciones y bono de alimentación
+- Estudiante 4 (Luis Avena Suarez): validaciones, pruebas, `Main` y documentación
