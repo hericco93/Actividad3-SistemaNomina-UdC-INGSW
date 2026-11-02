@@ -70,7 +70,7 @@ Trabajamos en equipo de 4 personas con un enfoque ágil ligero:
 1. **Análisis:** se dividió el enunciado en partes por rol: arquitectura y asalariado, empleados operativos, comisión y deducciones, y validaciones, pruebas e integración.
 2. **Diseño:** una clase abstracta `Empleado` y una clase por tipo de empleado, cada una con su forma de calcular el salario neto (herencia y polimorfismo).
 3. **Control de versiones con Git y GitHub:** cada integrante trabajó en su propia rama (`feature/...` o `fix/...`), con commits pequeños y mensajes que indican el cambio (`feat`, `fix`, `test`, `docs`).
-4. **Pull Requests:** los cambios se unieron a `main` con Pull Requests que el Estudiante 1 revisó y aprobó.
+4. **Pull Requests:** desde el Pull Request #1, los cambios se unieron a `main` con Pull Requests.
 5. **Pruebas:** cada regla de negocio y sus valores límite tiene su prueba unitaria.
 6. **Integración:** la clase `Main` instancia todos los tipos de empleado y comprueba el funcionamiento del sistema completo.
 7. **Refactorización:** se corrigieron valores y cálculos al integrar el trabajo (bono de alimentación y deducciones) y se ajustaron las pruebas.
